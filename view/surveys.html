@@ -3,8 +3,8 @@
         <table class="table table-responsive table-striped">
             <tbody ng-repeat="survey in surveys">
             <th>{{survey.surveyName}}</th>
-            <th>{{survey.answers.answer1.answerText}}</th>
-            <th>{{survey.answers.answer2.answerText}}</th>
+            <th><span ng-click="toVoted1($index)" class="fa fa-plus-circle" style="color: green"></span> - {{survey.answers.answer1.answerText}}</th>
+            <th><span ng-click="toVoted2($index)" class="fa fa-plus-circle" style="color: green"></span> - {{survey.answers.answer2.answerText}}</th>
             <th></th>
             <tr>
                 <td>
