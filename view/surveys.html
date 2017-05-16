@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-responsive table-striped">
+            <tbody ng-repeat="survey in surveys">
+            <th>{{survey.surveyName}}</th>
+            <th>{{survey.answers.answer1.answerText}}</th>
+            <th>{{survey.answers.answer2.answerText}}</th>
+            <th></th>
+            <tr>
+                <td>
+                    <p ng-show="survey.answers.answer1.answerCount + survey.answers.answer2.answerCount != 0">
+                        Toplam <b>{{survey.answers.answer1.answerCount + survey.answers.answer2.answerCount}}</b> oy
+                        kullanıldı
+                    </p>
+                    <p ng-show="survey.answers.answer1.answerCount + survey.answers.answer2.answerCount === 0" >
+                        Oy kullanılmadı.
+                    </p>
+                </td>
+                <td>
+                    <p ng-show="survey.answers.answer1.answerCount + survey.answers.answer2.answerCount != 0">
+                        <b>{{survey.answers.answer1.answerCount}}</b> Oy ile <b>%{{((survey.answers.answer1.answerCount *
+                        100) /
+                        (survey.answers.answer1.answerCount+survey.answers.answer2.answerCount)).toFixed(2)}}</b>
+                    </p>
+                    <p ng-show="survey.answers.answer1.answerCount + survey.answers.answer2.answerCount === 0" >
+                        Oy kullanılmadı.
+                    </p>
+                </td>
+                <td>
+                    <p ng-show="survey.answers.answer1.answerCount + survey.answers.answer2.answerCount != 0">
+                        <b>{{survey.answers.answer2.answerCount}}</b> Oy ile <b>%{{((survey.answers.answer2.answerCount *
+                        100) /
+                        (survey.answers.answer1.answerCount+survey.answers.answer2.answerCount)).toFixed(2)}}</b>
+                    </p>
+                    <p ng-show="survey.answers.answer1.answerCount + survey.answers.answer2.answerCount === 0" >
+                        Oy kullanılmadı.
+                    </p>
+                </td>
+                <td class="btn-group-sm" style="">
+                    <button class="btn btn-info" style="float: right" ui-sref="survey({id: survey._id})">Oy ver</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

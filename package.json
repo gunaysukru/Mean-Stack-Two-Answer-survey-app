@@ -1,0 +1,30 @@
+{
+  "name": "mean-stack-two-answer-survey-app",
+  "version": "1.0.0",
+  "description": "My first Mean Stack application. Two - answer survey application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gunaysukru/Mean-Stack-Two-Answer-survey-app.git"
+  },
+  "author": "GunaySukru",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.8"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/gunaysukru/Mean-Stack-Two-Answer-survey-app/issues"
+  },
+  "homepage": "https://github.com/gunaysukru/Mean-Stack-Two-Answer-survey-app#readme"
+}

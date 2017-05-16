@@ -1,0 +1,45 @@
+<div class="modal-dialog" ng-controller="newSurveyController">
+    <div class="modal-content">
+        <div class="modal-header">Yeni soru ekle</div>
+        <div class="modal-body">
+            <fieldset class="form-group">
+                <form ng-submit="addNewPoll()" name="form" novalidate>
+                    <label for="questionName">Soru</label>
+                    <input type="text"
+                           class="form-control"
+                           id="questionName"
+                           ng-model="questionName"
+                           placeholder="Aklındaki soruyu nedir?"
+                           ng-minlength="10"
+                           ng-maxlength="60"
+                           required
+                    >
+                    <br><label for="answer1">1. Cevap</label>
+                    <input type="text"
+                           class="form-control"
+                           id="answer1"
+                           ng-model="answer1"
+                           placeholder="1. Cevap"
+                           ng-maxlength="30"
+                           required
+                    >
+                    <br><label for="answer2">2. Cevap </label>
+                    <input type="text"
+                           class="form-control"
+                           id="answer2"
+                           ng-model="answer2"
+                           placeholder="2. Cevap"
+                           ng-maxlength="30"
+                           required
+                    >
+                </form>
+            </fieldset>
+            <h3 ng-show="addSurveySuccessful == 1" class="alert alert-success"> Başarıyla eklendi </h3>
+            <h3 ng-show="addSurveySuccessful == 2" class="alert alert-danger"> Anket eklenemedi !</h3>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger" data-dismiss="modal">Çık</button>
+            <button class="btn btn-success" ng-disabled="form.$invalid" ng-click="addNewSurvey()">Kaydet</button>
+        </div>
+    </div>
+</div>

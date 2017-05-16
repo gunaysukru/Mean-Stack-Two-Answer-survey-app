@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="panel panel-default fullHeight" style="margin: 0; padding: 0;">
+    <div class="panel panel-heading" style="height: auto;"><h4 style="text-align: center"><b>{{surveyName}}</b></h4></div>
+    <div class="panel-info panel-body" style="height: 88%;">
+        <div class="col-sm-6">
+            <div class="voteBar"
+                 style=" border-radius: 50px; background-color: #f9b300; height: {{positiveVotePercent}}%">
+                <div style="text-align: center; color: white;">
+                    <h4 ng-show="!positiveVoteCount">Oy kullanılmadı</h4>
+                    <h4 ng-show="positiveVoteCount">{{positiveVotePercent}}% - Toplam {{positiveVoteCount}} oy
+                        kullanıldı</h4>
+                </div>
+                <div class="voteBtn"><h1 ng-click="toVoted1()">Evet</h1></div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="voteBar"
+                 style=" border-radius: 50px; background-color: #cd2112; height: {{negativeVotePercent}}%">
+                <div style="text-align: center; color: white;">
+                    <h4 ng-show="!negativeVoteCount>0">Oy kullanılmadı</h4>
+                    <h4 ng-show="negativeVoteCount">{{negativeVotePercent}}% - Toplam {{negativeVoteCount}} oy
+                        kullanıldı</h4>
+                </div>
+                <div class="voteBtn"><h1 ng-click="toVoted2()">Hayır</h1></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

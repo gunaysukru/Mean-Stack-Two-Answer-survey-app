@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" ng-app="surveyApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Surver Application</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="https://rawgit.com/dwmkerr/angular-modal-service/master/dst/angular-modal-service.js"></script>
+    <script src="app.js"></script>
+    <script src="route.js"></script>
+    <script src="services/surveyService.js"></script>
+    <script src="services/voteService.js"></script>
+    <script src="controllers/surveyController.js"></script>
+    <script src="controllers/surveysController.js"></script>
+    <script src="controllers/newSurveyController.js"></script>
+</head>
+<body>
+
+<div tabindex="-1" class="modal" id="newSurvey">
+    <ng-include src="'view/newSurvey.html'"></ng-include>
+</div>
+
+<div tabindex="-1" class="modal" id="comments">
+    <ng-include src="'view/comments.html'"></ng-include>
+</div>
+
+<div class="container-fluid full container-main">
+    <div class="container-main">
+        <nav class="navbar navbar-static-top ng-scope" role="navigation">
+            <div class="navbar-header" style="float: right">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="fa fa-bars" aria-hidden="true"></span>
+                </button>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a class="btn btn-showAll" data-toggle="modal" data-target="#newSurvey">
+                                <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                                <span class="hidden-text">&nbsp;Yeni Soru Yarat</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a ui-sref="surveys" class="btn btn-showAll" ng-click="scrollTo('activeSurveys')">
+                                <span class="fa fa-list-ul" aria-hidden="true"></span>
+                                <span class="hidden-text">&nbsp;Tüm Referandumlar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-showAll" data-toggle="modal" data-target="#comments">
+                                <span class="fa fa-comment-o" aria-hidden="true"></span>
+                                <span class="hidden-text">&nbsp;Yorumlar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div ui-view class="fullHeight"></div>
+    </div>
+</div>
+
+</body>
+</html>
