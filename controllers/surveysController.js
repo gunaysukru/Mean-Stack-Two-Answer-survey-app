@@ -1,7 +1,7 @@
 /**
  * Created by GunaySukru on 15.05.2017.
  */
-app.controller("surveysController", function ($scope, surveyServices ) {
+app.controller("surveysController", function ($scope, surveyServices, voteService ) {
     $scope.surveys = [];
     function getSurveys() {
         surveyServices.getSurveysData().then(function (data) {
