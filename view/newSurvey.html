@@ -11,7 +11,7 @@
                            ng-model="questionName"
                            placeholder="Aklındaki soruyu nedir?"
                            ng-minlength="10"
-                           ng-maxlength="60"
+                           ng-maxlength="100"
                            required
                     >
                     <br><label for="answer1">1. Cevap</label>
@@ -20,7 +20,8 @@
                            id="answer1"
                            ng-model="answer1"
                            placeholder="1. Cevap"
-                           ng-maxlength="30"
+                           ng-minlength="3"
+                           ng-maxlength="50"
                            required
                     >
                     <br><label for="answer2">2. Cevap </label>
@@ -29,7 +30,8 @@
                            id="answer2"
                            ng-model="answer2"
                            placeholder="2. Cevap"
-                           ng-maxlength="30"
+                           ng-minlength="3"
+                           ng-maxlength="50"
                            required
                     >
                 </form>
